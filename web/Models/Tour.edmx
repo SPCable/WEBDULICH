@@ -11,6 +11,7 @@ warning 6013: The table/view 'tour.dbo.Admin' does not have a primary key define
           <Property Name="taikhoan" Type="nchar" MaxLength="10" />
           <Property Name="matkhau" Type="nchar" MaxLength="10" />
           <Property Name="matkhau2" Type="nchar" MaxLength="10" />
+          <Property Name="MANV" Type="varchar" MaxLength="10" />
         </EntityType>-->
         <EntityType Name="CHITIET_THAMQUAN">
           <Key>
@@ -498,10 +499,10 @@ warning 6013: The table/view 'tour.dbo.Admin' does not have a primary key define
           <Property Name="TENCHUYEN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="NGAYDI" Type="DateTime" Precision="3" />
           <Property Name="MA_TOUR" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="TOUR" Relationship="Self.FK__CHUYEN__MA_TOUR__32E0915F" FromRole="CHUYEN" ToRole="TOUR" />
-          <NavigationProperty Name="CT_PHIEU_DK" Relationship="Self.FK__CT_PHIEU___MA_CH__2D27B809" FromRole="CHUYEN" ToRole="CT_PHIEU_DK" />
           <Property Name="GIA" Type="Double" />
           <Property Name="Anh" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="TOUR" Relationship="Self.FK__CHUYEN__MA_TOUR__32E0915F" FromRole="CHUYEN" ToRole="TOUR" />
+          <NavigationProperty Name="CT_PHIEU_DK" Relationship="Self.FK__CT_PHIEU___MA_CH__2D27B809" FromRole="CHUYEN" ToRole="CT_PHIEU_DK" />
         </EntityType>
         <EntityType Name="CT_DIEM_DUNG_CHAN">
           <Key>
@@ -668,15 +669,15 @@ warning 6013: The table/view 'tour.dbo.Admin' does not have a primary key define
           </Key>
           <Property Name="MA_TOUR" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="TEN_TOUR" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="CHITIET_THAMQUAN" Relationship="Self.FK__CHITIET_T__MA_TO__34C8D9D1" FromRole="TOUR" ToRole="CHITIET_THAMQUAN" />
-          <NavigationProperty Name="CHUYENs" Relationship="Self.FK__CHUYEN__MA_TOUR__32E0915F" FromRole="TOUR" ToRole="CHUYEN" />
-          <NavigationProperty Name="HOP_DONG" Relationship="Self.FK__HOP_DONG__MA_TOU__33D4B598" FromRole="TOUR" ToRole="HOP_DONG" />
-          <NavigationProperty Name="LOTRINH_TOUR" Relationship="Self.FK__LOTRINH_T__MA_TO__35BCFE0A" FromRole="TOUR" ToRole="LOTRINH_TOUR" />
           <Property Name="Anh" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="SoLuong" Type="Int32" />
           <Property Name="SO_NGAY" Type="Int32" />
           <Property Name="SO_DEM" Type="Int32" />
           <Property Name="Link" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CHITIET_THAMQUAN" Relationship="Self.FK__CHITIET_T__MA_TO__34C8D9D1" FromRole="TOUR" ToRole="CHITIET_THAMQUAN" />
+          <NavigationProperty Name="CHUYENs" Relationship="Self.FK__CHUYEN__MA_TOUR__32E0915F" FromRole="TOUR" ToRole="CHUYEN" />
+          <NavigationProperty Name="HOP_DONG" Relationship="Self.FK__HOP_DONG__MA_TOU__33D4B598" FromRole="TOUR" ToRole="HOP_DONG" />
+          <NavigationProperty Name="LOTRINH_TOUR" Relationship="Self.FK__LOTRINH_T__MA_TO__35BCFE0A" FromRole="TOUR" ToRole="LOTRINH_TOUR" />
         </EntityType>
         <Association Name="FK__CHITIET_T__MA_DT__2F10007B">
           <End Role="DIEM_THAM_QUAN" Type="Self.DIEM_THAM_QUAN" Multiplicity="1" />
@@ -1000,12 +1001,12 @@ warning 6013: The table/view 'tour.dbo.Admin' does not have a primary key define
           <EntitySetMapping Name="CHUYENs">
             <EntityTypeMapping TypeName="tourModel.CHUYEN">
               <MappingFragment StoreEntitySet="CHUYEN">
-                <ScalarProperty Name="Anh" ColumnName="Anh" />
-                <ScalarProperty Name="GIA" ColumnName="GIA" />
                 <ScalarProperty Name="MA_CHUYEN" ColumnName="MA_CHUYEN" />
                 <ScalarProperty Name="TENCHUYEN" ColumnName="TENCHUYEN" />
                 <ScalarProperty Name="NGAYDI" ColumnName="NGAYDI" />
                 <ScalarProperty Name="MA_TOUR" ColumnName="MA_TOUR" />
+                <ScalarProperty Name="GIA" ColumnName="GIA" />
+                <ScalarProperty Name="Anh" ColumnName="Anh" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1158,14 +1159,14 @@ warning 6013: The table/view 'tour.dbo.Admin' does not have a primary key define
           <EntitySetMapping Name="TOURs">
             <EntityTypeMapping TypeName="tourModel.TOUR">
               <MappingFragment StoreEntitySet="TOUR">
-                <ScalarProperty Name="Link" ColumnName="Link" />
-                <ScalarProperty Name="SO_DEM" ColumnName="SO_DEM" />
-                <ScalarProperty Name="SO_NGAY" ColumnName="SO_NGAY" />
-                <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
-                <ScalarProperty Name="Anh" ColumnName="Anh" />
                 <ScalarProperty Name="MA_TOUR" ColumnName="MA_TOUR" />
                 <ScalarProperty Name="TEN_TOUR" ColumnName="TEN_TOUR" />
-                </MappingFragment>
+                <ScalarProperty Name="Anh" ColumnName="Anh" />
+                <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+                <ScalarProperty Name="SO_NGAY" ColumnName="SO_NGAY" />
+                <ScalarProperty Name="SO_DEM" ColumnName="SO_DEM" />
+                <ScalarProperty Name="Link" ColumnName="Link" />
+              </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="tourModel.Store.sp_alterdiagram" />
