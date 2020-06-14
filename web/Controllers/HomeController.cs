@@ -22,6 +22,16 @@ namespace web.Controllers
             return View(tOURs.ToList());
         }
 
+        public ActionResult travel_NhaTrang()
+        {
+            return View();
+        }
+
+        public ActionResult travel_PhanThiet()
+        {
+            return View();
+        }
+
         public ActionResult Hienthi()
         {
             return View();

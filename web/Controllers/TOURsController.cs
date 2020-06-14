@@ -21,6 +21,13 @@ namespace web.Controllers
             return View(tOURs.ToList());
         }
 
+        public ActionResult travel_NhaTrang()
+        {
+            var tOURs = db.TOURs.Include(t => t.CHUYENs);
+            return View(tOURs.ToList());
+        }
+
+
         // GET: TOURs/Details/5
         public ActionResult Details(string id)
         {
