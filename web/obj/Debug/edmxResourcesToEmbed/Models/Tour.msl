@@ -169,6 +169,7 @@
     <EntitySetMapping Name="TOURs">
       <EntityTypeMapping TypeName="tourModel.TOUR">
         <MappingFragment StoreEntitySet="TOUR">
+          <ScalarProperty Name="Link" ColumnName="Link" />
           <ScalarProperty Name="SO_DEM" ColumnName="SO_DEM" />
           <ScalarProperty Name="SO_NGAY" ColumnName="SO_NGAY" />
           <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />

@@ -175,6 +175,7 @@ warning 6013: The table/view 'tour.dbo.TaiKhoan' does not have a primary key def
     <Property Name="SoLuong" Type="int" />
     <Property Name="SO_NGAY" Type="int" />
     <Property Name="SO_DEM" Type="int" />
+    <Property Name="Link" Type="nvarchar" MaxLength="100" />
   </EntityType>
   <Association Name="FK__CHITIET_T__MA_DT__2F10007B">
     <End Role="DIEM_THAM_QUAN" Type="Self.DIEM_THAM_QUAN" Multiplicity="1" />

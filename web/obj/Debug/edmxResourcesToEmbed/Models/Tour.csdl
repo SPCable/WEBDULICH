@@ -195,6 +195,7 @@
     <Property Name="SoLuong" Type="Int32" />
     <Property Name="SO_NGAY" Type="Int32" />
     <Property Name="SO_DEM" Type="Int32" />
+    <Property Name="Link" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
   </EntityType>
   <Association Name="FK__CHITIET_T__MA_DT__2F10007B">
     <End Role="DIEM_THAM_QUAN" Type="Self.DIEM_THAM_QUAN" Multiplicity="1" />

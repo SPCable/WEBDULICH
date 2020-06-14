@@ -28,6 +28,7 @@ namespace web.Models
         public Nullable<int> SoLuong { get; set; }
         public Nullable<int> SO_NGAY { get; set; }
         public Nullable<int> SO_DEM { get; set; }
+        public string Link { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CHITIET_THAMQUAN> CHITIET_THAMQUAN { get; set; }
