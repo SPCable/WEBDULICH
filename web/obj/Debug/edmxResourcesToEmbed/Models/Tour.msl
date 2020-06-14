@@ -13,6 +13,8 @@
     <EntitySetMapping Name="CHUYENs">
       <EntityTypeMapping TypeName="tourModel.CHUYEN">
         <MappingFragment StoreEntitySet="CHUYEN">
+          <ScalarProperty Name="Anh" ColumnName="Anh" />
+          <ScalarProperty Name="GIA" ColumnName="GIA" />
           <ScalarProperty Name="MA_CHUYEN" ColumnName="MA_CHUYEN" />
           <ScalarProperty Name="TENCHUYEN" ColumnName="TENCHUYEN" />
           <ScalarProperty Name="NGAYDI" ColumnName="NGAYDI" />

@@ -21,6 +21,8 @@
     <Property Name="MA_TOUR" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="TOUR" Relationship="Self.FK__CHUYEN__MA_TOUR__32E0915F" FromRole="CHUYEN" ToRole="TOUR" />
     <NavigationProperty Name="CT_PHIEU_DK" Relationship="Self.FK__CT_PHIEU___MA_CH__2D27B809" FromRole="CHUYEN" ToRole="CT_PHIEU_DK" />
+    <Property Name="GIA" Type="Double" />
+    <Property Name="Anh" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
   </EntityType>
   <EntityType Name="CT_DIEM_DUNG_CHAN">
     <Key>

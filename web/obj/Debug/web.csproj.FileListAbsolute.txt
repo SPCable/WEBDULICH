@@ -468,7 +468,6 @@ C:\Users\ADMIN\Desktop\WEBDULICH\web\bin\Microsoft.Owin.Security.MicrosoftAccoun
 C:\Users\ADMIN\Desktop\WEBDULICH\web\bin\Microsoft.Owin.Security.OAuth.xml
 C:\Users\ADMIN\Desktop\WEBDULICH\web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\ADMIN\Desktop\WEBDULICH\web\bin\ru-ru\BundleTransformer.Core.resources.dll
-C:\Users\ADMIN\Desktop\WEBDULICH\web\obj\Debug\web.csprojAssemblyReference.cache
 C:\Users\ADMIN\Desktop\WEBDULICH\web\obj\Debug\web.csproj.CoreCompileInputs.cache
 C:\Users\ADMIN\Desktop\WEBDULICH\web\obj\Debug\web.csproj.CopyComplete
 C:\Users\ADMIN\Desktop\WEBDULICH\web\obj\Debug\web.dll

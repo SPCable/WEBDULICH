@@ -24,6 +24,8 @@ namespace web.Models
         public string TENCHUYEN { get; set; }
         public Nullable<System.DateTime> NGAYDI { get; set; }
         public string MA_TOUR { get; set; }
+        public Nullable<double> GIA { get; set; }
+        public string Anh { get; set; }
     
         public virtual TOUR TOUR { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

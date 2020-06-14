@@ -575,12 +575,11 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\NguoiDung\DangKi.cshtml" />
-    <Content Include="Views\Home\Hienthi.cshtml" />
-    <Content Include="Views\TOURs\Create.cshtml" />
-    <Content Include="Views\TOURs\Delete.cshtml" />
-    <Content Include="Views\TOURs\Details.cshtml" />
-    <Content Include="Views\TOURs\Edit.cshtml" />
-    <Content Include="Views\TOURs\Index.cshtml" />
+    <Content Include="Views\Account\TOURs\Create.cshtml" />
+    <Content Include="Views\Account\TOURs\Delete.cshtml" />
+    <Content Include="Views\Account\TOURs\Details.cshtml" />
+    <Content Include="Views\Account\TOURs\Edit.cshtml" />
+    <Content Include="Views\Account\TOURs\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
