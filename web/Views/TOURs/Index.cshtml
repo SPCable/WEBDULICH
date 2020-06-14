@@ -1,0 +1,45 @@
+﻿@model IEnumerable<web.Models.TOUR>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Quản lý Tour</h2>
+
+<p>
+    @Html.ActionLink("Thêm Tour tại đây", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Tên Tour
+        </th>
+        <th>
+            File Ảnh
+        </th>
+        <th>
+            Số Lượng Tour Còn Lại
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TEN_TOUR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Anh)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoLuong)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MA_TOUR }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MA_TOUR }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MA_TOUR })
+        </td>
+    </tr>
+}
+
+</table>

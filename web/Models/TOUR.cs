@@ -24,8 +24,10 @@ namespace web.Models
     
         public string MA_TOUR { get; set; }
         public string TEN_TOUR { get; set; }
-        public Nullable<int> SONGAY { get; set; }
-        public Nullable<int> SODEM { get; set; }
+        public string Anh { get; set; }
+        public Nullable<int> SoLuong { get; set; }
+        public Nullable<int> SO_NGAY { get; set; }
+        public Nullable<int> SO_DEM { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CHITIET_THAMQUAN> CHITIET_THAMQUAN { get; set; }

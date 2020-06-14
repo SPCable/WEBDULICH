@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="tourModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="tourModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="CHITIET_THAMQUAN">
           <Key>
             <PropertyRef Name="MA_DTQ" />
@@ -160,14 +160,26 @@
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'tour.dbo.TaiKhoan' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="TaiKhoan">
+          <Property Name="hoten" Type="nchar" MaxLength="10" />
+          <Property Name="taikhoan" Type="nchar" MaxLength="10" />
+          <Property Name="matkhau" Type="nchar" MaxLength="10" />
+          <Property Name="matkhau2" Type="nchar" MaxLength="10" />
+          <Property Name="email" Type="nchar" MaxLength="35" />
+          <Property Name="sdt" Type="numeric" Precision="18" Scale="0" />
+        </EntityType>-->
         <EntityType Name="TOUR">
           <Key>
             <PropertyRef Name="MA_TOUR" />
           </Key>
           <Property Name="MA_TOUR" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="TEN_TOUR" Type="nvarchar" MaxLength="50" />
-          <Property Name="SONGAY" Type="int" />
-          <Property Name="SODEM" Type="int" />
+          <Property Name="Anh" Type="nchar" MaxLength="10" />
+          <Property Name="SoLuong" Type="int" />
+          <Property Name="SO_NGAY" Type="int" />
+          <Property Name="SO_DEM" Type="int" />
         </EntityType>
         <Association Name="FK__CHITIET_T__MA_DT__2F10007B">
           <End Role="DIEM_THAM_QUAN" Type="Self.DIEM_THAM_QUAN" Multiplicity="1" />
@@ -353,6 +365,37 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="tourModelStoreContainer">
           <EntitySet Name="CHITIET_THAMQUAN" EntityType="Self.CHITIET_THAMQUAN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CHUYEN" EntityType="Self.CHUYEN" Schema="dbo" store:Type="Tables" />
@@ -432,8 +475,7 @@
             <End Role="PHIEU_DK" EntitySet="PHIEU_DK" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="tourModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -624,12 +666,14 @@
           </Key>
           <Property Name="MA_TOUR" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="TEN_TOUR" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="SONGAY" Type="Int32" />
-          <Property Name="SODEM" Type="Int32" />
           <NavigationProperty Name="CHITIET_THAMQUAN" Relationship="Self.FK__CHITIET_T__MA_TO__34C8D9D1" FromRole="TOUR" ToRole="CHITIET_THAMQUAN" />
           <NavigationProperty Name="CHUYENs" Relationship="Self.FK__CHUYEN__MA_TOUR__32E0915F" FromRole="TOUR" ToRole="CHUYEN" />
           <NavigationProperty Name="HOP_DONG" Relationship="Self.FK__HOP_DONG__MA_TOU__33D4B598" FromRole="TOUR" ToRole="HOP_DONG" />
           <NavigationProperty Name="LOTRINH_TOUR" Relationship="Self.FK__LOTRINH_T__MA_TO__35BCFE0A" FromRole="TOUR" ToRole="LOTRINH_TOUR" />
+          <Property Name="Anh" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="SoLuong" Type="Int32" />
+          <Property Name="SO_NGAY" Type="Int32" />
+          <Property Name="SO_DEM" Type="Int32" />
         </EntityType>
         <Association Name="FK__CHITIET_T__MA_DT__2F10007B">
           <End Role="DIEM_THAM_QUAN" Type="Self.DIEM_THAM_QUAN" Multiplicity="1" />
@@ -893,7 +937,48 @@
             <End Role="NHANVIEN" EntitySet="NHANVIENs" />
             <End Role="PHIEU_DK" EntitySet="PHIEU_DK" />
           </AssociationSet>
+          <FunctionImport Name="sp_alterdiagram">
+          <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_creatediagram">
+          <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_dropdiagram">
+          <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(tourModel.sp_helpdiagramdefinition_Result)">
+          <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(tourModel.sp_helpdiagrams_Result)">
+          <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_renamediagram">
+          <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="new_diagramname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_upgraddiagrams" />
         </EntityContainer>
+        <ComplexType Name="sp_helpdiagramdefinition_Result">
+          <Property Type="Int32" Name="version" Nullable="true" />
+          <Property Type="Binary" Name="definition" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagrams_Result">
+          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+          <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1068,13 +1153,39 @@
           <EntitySetMapping Name="TOURs">
             <EntityTypeMapping TypeName="tourModel.TOUR">
               <MappingFragment StoreEntitySet="TOUR">
+                <ScalarProperty Name="SO_DEM" ColumnName="SO_DEM" />
+                <ScalarProperty Name="SO_NGAY" ColumnName="SO_NGAY" />
+                <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+                <ScalarProperty Name="Anh" ColumnName="Anh" />
                 <ScalarProperty Name="MA_TOUR" ColumnName="MA_TOUR" />
                 <ScalarProperty Name="TEN_TOUR" ColumnName="TEN_TOUR" />
-                <ScalarProperty Name="SONGAY" ColumnName="SONGAY" />
-                <ScalarProperty Name="SODEM" ColumnName="SODEM" />
-              </MappingFragment>
+                </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="tourModel.Store.sp_alterdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="tourModel.Store.sp_creatediagram" />
+          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="tourModel.Store.sp_dropdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="tourModel.Store.sp_helpdiagramdefinition">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tourModel.sp_helpdiagramdefinition_Result">
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="tourModel.Store.sp_helpdiagrams">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tourModel.sp_helpdiagrams_Result">
+                <ScalarProperty Name="Database" ColumnName="Database" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="tourModel.Store.sp_renamediagram" />
+          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="tourModel.Store.sp_upgraddiagrams" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

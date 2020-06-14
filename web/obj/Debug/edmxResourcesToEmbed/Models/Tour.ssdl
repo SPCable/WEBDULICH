@@ -155,14 +155,26 @@
     <Property Name="version" Type="int" />
     <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'tour.dbo.TaiKhoan' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="TaiKhoan">
+          <Property Name="hoten" Type="nchar" MaxLength="10" />
+          <Property Name="taikhoan" Type="nchar" MaxLength="10" />
+          <Property Name="matkhau" Type="nchar" MaxLength="10" />
+          <Property Name="matkhau2" Type="nchar" MaxLength="10" />
+          <Property Name="email" Type="nchar" MaxLength="35" />
+          <Property Name="sdt" Type="numeric" Precision="18" Scale="0" />
+        </EntityType>-->
   <EntityType Name="TOUR">
     <Key>
       <PropertyRef Name="MA_TOUR" />
     </Key>
     <Property Name="MA_TOUR" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="TEN_TOUR" Type="nvarchar" MaxLength="50" />
-    <Property Name="SONGAY" Type="int" />
-    <Property Name="SODEM" Type="int" />
+    <Property Name="Anh" Type="nchar" MaxLength="10" />
+    <Property Name="SoLuong" Type="int" />
+    <Property Name="SO_NGAY" Type="int" />
+    <Property Name="SO_DEM" Type="int" />
   </EntityType>
   <Association Name="FK__CHITIET_T__MA_DT__2F10007B">
     <End Role="DIEM_THAM_QUAN" Type="Self.DIEM_THAM_QUAN" Multiplicity="1" />
@@ -348,6 +360,37 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <EntityContainer Name="tourModelStoreContainer">
     <EntitySet Name="CHITIET_THAMQUAN" EntityType="Self.CHITIET_THAMQUAN" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="CHUYEN" EntityType="Self.CHUYEN" Schema="dbo" store:Type="Tables" />

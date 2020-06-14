@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<web.Models.TOUR>
 @{
     Layout = null;
 }
@@ -60,7 +60,7 @@
                                             <li><a class="active" href="/">Trang chủ</a></li>
                                             <li><a href="about.html">Giới thiệu</a></li>
                                             <li><a class="" href="travel_destination.html">Đặt tour</a></l/li>
-                                            <li><a href="https://localhost:44322/Home/Contact">Liên hệ</a></li>
+                                            <li><a href="contact.html">Liên hệ</a></li>
                                             <li><a href="https://localhost:44322/Account/Login">Đăng nhập</a></li>
                                         </ul>
                                     </nav>
@@ -194,7 +194,6 @@
         </div>
     </div>
     <!-- where_togo_area_end  -->
-    
     <!-- popular_destination_area_start  -->
     <div class="popular_destination_area">
         <div class="container">
@@ -207,16 +206,19 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="single_destination">
-                        <div class="thumb">
-                            <img src="~/img/destination/1.png" alt="">
-                        </div>
-                        <div class="content">
-                            <p class="d-flex align-items-center">Tên tour <a href="travel_destination.html">  Số lượng</a> </p>
+                @foreach(var item in Model)
+                {
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single_destination">
+                            <div class="thumb">
+                                <img src="~/img/destination/@item.Anh" alt="">
+                            </div>
+                            <div class="content">
+                                <p class="d-flex align-items-center">@Html.DisplayFor(modelItem => item.TEN_TOUR)<a href="travel_destination.html">Số lượng: @Html.DisplayFor(modelItem => item.SoLuong)</a> </p>
+                            </div>
                         </div>
                     </div>
-                </div>
+                    }
             </div>
         </div>
     </div>

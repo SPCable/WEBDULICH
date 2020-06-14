@@ -1,17 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using web.Models;
 
 namespace web.Controllers
 {
+    
     public class HomeController : Controller
     {
+        private tourEntities db = new tourEntities();
+
+        // GET: TOURs
         public ActionResult Index()
+        {
+            var tOURs = db.TOURs.Include(t => t.LOTRINH_TOUR);
+            return View(tOURs.ToList());
+        }
+
+        public ActionResult Hienthi()
         {
             return View();
         }
+
 
         public ActionResult About()
         {
