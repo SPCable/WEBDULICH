@@ -1,0 +1,57 @@
+﻿
+@{
+    Layout = null;
+}
+
+<h2 style="text-align:center; color:red;font-size:40px;font-weight:bold">Thông Tin Của Bạn </h2>
+<h4 style="color:red; text-align:center">@ViewBag.ThongBao</h4>
+<h4 style="color:red; text-align:center">@ViewBag.Trung</h4>
+<br />
+<table class="col_2_of_footer-top span_1_of_footer-top wrap" border="0">
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true)
+        <tr style="height:40px">
+            <td style="color :#0094ff; font-size :20px"> Họ Tên Bạn: </td>
+            <td>
+                <input type="text" name="HoTenKH" required autocomplete="off" style="font-size:18px" />
+            </td>
+        </tr>
+        <tr style="height:40px">
+            <td style="color :#0094ff; font-size :20px"> Tài Khoản: </td>
+            <td>
+                <input type="text" name="TaiKhoan" required autocomplete="off" title="Bạn sẽ đăng nhập với tên này" style="font-size:18px" />
+            </td>
+        </tr>
+        <tr style="height:40px">
+            <td style="color :#0094ff; font-size :20px"> Mật Khẩu: </td>
+            <td>
+                <input type="password" name="MatKhau" required autocomplete="off" title="Không bỏ dấu vào ký tự" style="font-size:18px" />
+            </td>
+        </tr>
+        <tr style="height:40px">
+            <td style="color :#0094ff; font-size :20px"> Email: </td>
+            <td>
+                <input type="email" name="Email" required autocomplete="off" title="Chúng tôi sẽ liên hệ với bạn" style="font-size:18px" />
+            </td>
+        </tr>
+        <tr style="height:40px">
+            <td style="color :#0094ff; font-size :20px"> Địa Chỉ: </td>
+            <td>
+                <input type="text" name="DiaChi" title="Chúng tôi sẽ giao hàng ở đây!" required autocomplete="off" style="font-size:18px" />
+            </td>
+        </tr>
+        <tr style="height:70px">
+            <td style="color :#0094ff; font-size :20px"> Điện Thoại: </td>
+            <td>
+                <input type="tel" name="DienThoai" title="Chúng tôi sẽ liên hệ với bạn!" required autocomplete="off" style="font-size:18px" />
+            </td>
+        </tr>
+        <tr style="height:70px">
+            <td></td>
+            <td align="left">
+                <a title="Đăng Kí Nha"><input type="submit" value="Đăng Kí" style="font-size:30px" /></a>
+            </td>
+        </tr>
+    }
+</table>

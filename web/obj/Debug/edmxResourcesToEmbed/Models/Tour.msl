@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="tourModelStoreContainer" CdmEntityContainer="tourEntities">
+    <EntitySetMapping Name="CHITIET_THAMQUAN">
+      <EntityTypeMapping TypeName="tourModel.CHITIET_THAMQUAN">
+        <MappingFragment StoreEntitySet="CHITIET_THAMQUAN">
+          <ScalarProperty Name="MA_DTQ" ColumnName="MA_DTQ" />
+          <ScalarProperty Name="MA_TOUR" ColumnName="MA_TOUR" />
+          <ScalarProperty Name="THOIGIAN" ColumnName="THOIGIAN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CHUYENs">
+      <EntityTypeMapping TypeName="tourModel.CHUYEN">
+        <MappingFragment StoreEntitySet="CHUYEN">
+          <ScalarProperty Name="MA_CHUYEN" ColumnName="MA_CHUYEN" />
+          <ScalarProperty Name="TENCHUYEN" ColumnName="TENCHUYEN" />
+          <ScalarProperty Name="NGAYDI" ColumnName="NGAYDI" />
+          <ScalarProperty Name="MA_TOUR" ColumnName="MA_TOUR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CT_DIEM_DUNG_CHAN">
+      <EntityTypeMapping TypeName="tourModel.CT_DIEM_DUNG_CHAN">
+        <MappingFragment StoreEntitySet="CT_DIEM_DUNG_CHAN">
+          <ScalarProperty Name="MA_NOIDI" ColumnName="MA_NOIDI" />
+          <ScalarProperty Name="MA_NOIDEN" ColumnName="MA_NOIDEN" />
+          <ScalarProperty Name="MA_DDC" ColumnName="MA_DDC" />
+          <ScalarProperty Name="THOI_GIAN" ColumnName="THOI_GIAN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CT_PHIEU_DK">
+      <EntityTypeMapping TypeName="tourModel.CT_PHIEU_DK">
+        <MappingFragment StoreEntitySet="CT_PHIEU_DK">
+          <ScalarProperty Name="MA_PHIEU" ColumnName="MA_PHIEU" />
+          <ScalarProperty Name="MA_CHUYEN" ColumnName="MA_CHUYEN" />
+          <ScalarProperty Name="SO_NGUOI" ColumnName="SO_NGUOI" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DIEM_DUNG_CHAN">
+      <EntityTypeMapping TypeName="tourModel.DIEM_DUNG_CHAN">
+        <MappingFragment StoreEntitySet="DIEM_DUNG_CHAN">
+          <ScalarProperty Name="MA_DDC" ColumnName="MA_DDC" />
+          <ScalarProperty Name="TEN_DDC" ColumnName="TEN_DDC" />
+          <ScalarProperty Name="THANH_PHO" ColumnName="THANH_PHO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DIEM_THAM_QUAN">
+      <EntityTypeMapping TypeName="tourModel.DIEM_THAM_QUAN">
+        <MappingFragment StoreEntitySet="DIEM_THAM_QUAN">
+          <ScalarProperty Name="MA_DTQ" ColumnName="MA_DTQ" />
+          <ScalarProperty Name="TEN_DTQ" ColumnName="TEN_DTQ" />
+          <ScalarProperty Name="NOIDUNG" ColumnName="NOIDUNG" />
+          <ScalarProperty Name="YNGHIA" ColumnName="YNGHIA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HD_NV">
+      <EntityTypeMapping TypeName="tourModel.HD_NV">
+        <MappingFragment StoreEntitySet="HD_NV">
+          <ScalarProperty Name="MA_HD" ColumnName="MA_HD" />
+          <ScalarProperty Name="MANV_HDDL" ColumnName="MANV_HDDL" />
+          <ScalarProperty Name="NOIDUNG_HD" ColumnName="NOIDUNG_HD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HOP_DONG">
+      <EntityTypeMapping TypeName="tourModel.HOP_DONG">
+        <MappingFragment StoreEntitySet="HOP_DONG">
+          <ScalarProperty Name="MA_HD" ColumnName="MA_HD" />
+          <ScalarProperty Name="NOIDUNG" ColumnName="NOIDUNG" />
+          <ScalarProperty Name="SO_NGAYDI" ColumnName="SO_NGAYDI" />
+          <ScalarProperty Name="NOI_DON" ColumnName="NOI_DON" />
+          <ScalarProperty Name="NGAYDI_HD" ColumnName="NGAYDI_HD" />
+          <ScalarProperty Name="MA_DOAN" ColumnName="MA_DOAN" />
+          <ScalarProperty Name="MA_TOUR" ColumnName="MA_TOUR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KHACH_DOAN">
+      <EntityTypeMapping TypeName="tourModel.KHACH_DOAN">
+        <MappingFragment StoreEntitySet="KHACH_DOAN">
+          <ScalarProperty Name="MA_DOAN" ColumnName="MA_DOAN" />
+          <ScalarProperty Name="TEN_DOAN" ColumnName="TEN_DOAN" />
+          <ScalarProperty Name="HOTEN_TD" ColumnName="HOTEN_TD" />
+          <ScalarProperty Name="DIACHI" ColumnName="DIACHI" />
+          <ScalarProperty Name="DT" ColumnName="DT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KHACHHANGs">
+      <EntityTypeMapping TypeName="tourModel.KHACHHANG">
+        <MappingFragment StoreEntitySet="KHACHHANG">
+          <ScalarProperty Name="MA_KH" ColumnName="MA_KH" />
+          <ScalarProperty Name="HOTEN_KH" ColumnName="HOTEN_KH" />
+          <ScalarProperty Name="DIACHI" ColumnName="DIACHI" />
+          <ScalarProperty Name="DT" ColumnName="DT" />
+          <ScalarProperty Name="MA_PHIEU" ColumnName="MA_PHIEU" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LO_TRINH">
+      <EntityTypeMapping TypeName="tourModel.LO_TRINH">
+        <MappingFragment StoreEntitySet="LO_TRINH">
+          <ScalarProperty Name="MA_NOIDI" ColumnName="MA_NOIDI" />
+          <ScalarProperty Name="MA_NOIDEN" ColumnName="MA_NOIDEN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LOTRINH_TOUR">
+      <EntityTypeMapping TypeName="tourModel.LOTRINH_TOUR">
+        <MappingFragment StoreEntitySet="LOTRINH_TOUR">
+          <ScalarProperty Name="MA_TOUR" ColumnName="MA_TOUR" />
+          <ScalarProperty Name="MA_NOIDI" ColumnName="MA_NOIDI" />
+          <ScalarProperty Name="MA_NOIDEN" ColumnName="MA_NOIDEN" />
+          <ScalarProperty Name="SONGAY" ColumnName="SONGAY" />
+          <ScalarProperty Name="SONGAYDI_PT" ColumnName="SONGAYDI_PT" />
+          <ScalarProperty Name="LOAI_PT" ColumnName="LOAI_PT" />
+          <ScalarProperty Name="LOAI_KS" ColumnName="LOAI_KS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NHANVIENs">
+      <EntityTypeMapping TypeName="tourModel.NHANVIEN">
+        <MappingFragment StoreEntitySet="NHANVIEN">
+          <ScalarProperty Name="MANV" ColumnName="MANV" />
+          <ScalarProperty Name="TEN_NV" ColumnName="TEN_NV" />
+          <ScalarProperty Name="NGAYSINH" ColumnName="NGAYSINH" />
+          <ScalarProperty Name="PHAI" ColumnName="PHAI" />
+          <ScalarProperty Name="DT" ColumnName="DT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NV_HDDL">
+      <EntityTypeMapping TypeName="tourModel.NV_HDDL">
+        <MappingFragment StoreEntitySet="NV_HDDL">
+          <ScalarProperty Name="MANV_HDDL" ColumnName="MANV_HDDL" />
+          <ScalarProperty Name="TEN_NV" ColumnName="TEN_NV" />
+          <ScalarProperty Name="NGAYSINH" ColumnName="NGAYSINH" />
+          <ScalarProperty Name="PHAI" ColumnName="PHAI" />
+          <ScalarProperty Name="DIACHI" ColumnName="DIACHI" />
+          <ScalarProperty Name="DT" ColumnName="DT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PHIEU_DK">
+      <EntityTypeMapping TypeName="tourModel.PHIEU_DK">
+        <MappingFragment StoreEntitySet="PHIEU_DK">
+          <ScalarProperty Name="MA_PHIEU" ColumnName="MA_PHIEU" />
+          <ScalarProperty Name="NGAY_DK" ColumnName="NGAY_DK" />
+          <ScalarProperty Name="MANV" ColumnName="MANV" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="tourModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TOURs">
+      <EntityTypeMapping TypeName="tourModel.TOUR">
+        <MappingFragment StoreEntitySet="TOUR">
+          <ScalarProperty Name="MA_TOUR" ColumnName="MA_TOUR" />
+          <ScalarProperty Name="TEN_TOUR" ColumnName="TEN_TOUR" />
+          <ScalarProperty Name="SONGAY" ColumnName="SONGAY" />
+          <ScalarProperty Name="SODEM" ColumnName="SODEM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

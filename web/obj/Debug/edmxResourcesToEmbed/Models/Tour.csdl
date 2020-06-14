@@ -1,0 +1,460 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="tourModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CHITIET_THAMQUAN">
+    <Key>
+      <PropertyRef Name="MA_DTQ" />
+      <PropertyRef Name="MA_TOUR" />
+    </Key>
+    <Property Name="MA_DTQ" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MA_TOUR" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="THOIGIAN" Type="Int32" />
+    <NavigationProperty Name="DIEM_THAM_QUAN" Relationship="Self.FK__CHITIET_T__MA_DT__2F10007B" FromRole="CHITIET_THAMQUAN" ToRole="DIEM_THAM_QUAN" />
+    <NavigationProperty Name="TOUR" Relationship="Self.FK__CHITIET_T__MA_TO__34C8D9D1" FromRole="CHITIET_THAMQUAN" ToRole="TOUR" />
+  </EntityType>
+  <EntityType Name="CHUYEN">
+    <Key>
+      <PropertyRef Name="MA_CHUYEN" />
+    </Key>
+    <Property Name="MA_CHUYEN" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TENCHUYEN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NGAYDI" Type="DateTime" Precision="3" />
+    <Property Name="MA_TOUR" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="TOUR" Relationship="Self.FK__CHUYEN__MA_TOUR__32E0915F" FromRole="CHUYEN" ToRole="TOUR" />
+    <NavigationProperty Name="CT_PHIEU_DK" Relationship="Self.FK__CT_PHIEU___MA_CH__2D27B809" FromRole="CHUYEN" ToRole="CT_PHIEU_DK" />
+  </EntityType>
+  <EntityType Name="CT_DIEM_DUNG_CHAN">
+    <Key>
+      <PropertyRef Name="MA_NOIDI" />
+      <PropertyRef Name="MA_NOIDEN" />
+      <PropertyRef Name="MA_DDC" />
+    </Key>
+    <Property Name="MA_NOIDI" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MA_NOIDEN" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MA_DDC" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="THOI_GIAN" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="DIEM_DUNG_CHAN" Relationship="Self.FK__CT_DIEM_D__MA_DD__2E1BDC42" FromRole="CT_DIEM_DUNG_CHAN" ToRole="DIEM_DUNG_CHAN" />
+    <NavigationProperty Name="LO_TRINH" Relationship="Self.FK__CT_DIEM_DUNG_CHA__37A5467C" FromRole="CT_DIEM_DUNG_CHAN" ToRole="LO_TRINH" />
+  </EntityType>
+  <EntityType Name="CT_PHIEU_DK">
+    <Key>
+      <PropertyRef Name="MA_PHIEU" />
+      <PropertyRef Name="MA_CHUYEN" />
+    </Key>
+    <Property Name="MA_PHIEU" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="MA_CHUYEN" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SO_NGUOI" Type="Int32" />
+    <NavigationProperty Name="CHUYEN" Relationship="Self.FK__CT_PHIEU___MA_CH__2D27B809" FromRole="CT_PHIEU_DK" ToRole="CHUYEN" />
+    <NavigationProperty Name="PHIEU_DK" Relationship="Self.FK__CT_PHIEU___MA_PH__3A81B327" FromRole="CT_PHIEU_DK" ToRole="PHIEU_DK" />
+  </EntityType>
+  <EntityType Name="DIEM_DUNG_CHAN">
+    <Key>
+      <PropertyRef Name="MA_DDC" />
+    </Key>
+    <Property Name="MA_DDC" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TEN_DDC" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="THANH_PHO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="CT_DIEM_DUNG_CHAN" Relationship="Self.FK__CT_DIEM_D__MA_DD__2E1BDC42" FromRole="DIEM_DUNG_CHAN" ToRole="CT_DIEM_DUNG_CHAN" />
+  </EntityType>
+  <EntityType Name="DIEM_THAM_QUAN">
+    <Key>
+      <PropertyRef Name="MA_DTQ" />
+    </Key>
+    <Property Name="MA_DTQ" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TEN_DTQ" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NOIDUNG" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="YNGHIA" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="CHITIET_THAMQUAN" Relationship="Self.FK__CHITIET_T__MA_DT__2F10007B" FromRole="DIEM_THAM_QUAN" ToRole="CHITIET_THAMQUAN" />
+  </EntityType>
+  <EntityType Name="HD_NV">
+    <Key>
+      <PropertyRef Name="MA_HD" />
+      <PropertyRef Name="MANV_HDDL" />
+    </Key>
+    <Property Name="MA_HD" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MANV_HDDL" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NOIDUNG_HD" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="HOP_DONG" Relationship="Self.FK__HD_NV__MA_HD__300424B4" FromRole="HD_NV" ToRole="HOP_DONG" />
+    <NavigationProperty Name="NV_HDDL" Relationship="Self.FK__HD_NV__MANV_HDDL__31EC6D26" FromRole="HD_NV" ToRole="NV_HDDL" />
+  </EntityType>
+  <EntityType Name="HOP_DONG">
+    <Key>
+      <PropertyRef Name="MA_HD" />
+    </Key>
+    <Property Name="MA_HD" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NOIDUNG" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SO_NGAYDI" Type="Int32" />
+    <Property Name="NOI_DON" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NGAYDI_HD" Type="DateTime" Precision="3" />
+    <Property Name="MA_DOAN" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MA_TOUR" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="HD_NV" Relationship="Self.FK__HD_NV__MA_HD__300424B4" FromRole="HOP_DONG" ToRole="HD_NV" />
+    <NavigationProperty Name="KHACH_DOAN" Relationship="Self.FK__HOP_DONG__MA_DOA__30F848ED" FromRole="HOP_DONG" ToRole="KHACH_DOAN" />
+    <NavigationProperty Name="TOUR" Relationship="Self.FK__HOP_DONG__MA_TOU__33D4B598" FromRole="HOP_DONG" ToRole="TOUR" />
+  </EntityType>
+  <EntityType Name="KHACH_DOAN">
+    <Key>
+      <PropertyRef Name="MA_DOAN" />
+    </Key>
+    <Property Name="MA_DOAN" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TEN_DOAN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="HOTEN_TD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DIACHI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DT" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="HOP_DONG" Relationship="Self.FK__HOP_DONG__MA_DOA__30F848ED" FromRole="KHACH_DOAN" ToRole="HOP_DONG" />
+  </EntityType>
+  <EntityType Name="KHACHHANG">
+    <Key>
+      <PropertyRef Name="MA_KH" />
+    </Key>
+    <Property Name="MA_KH" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="HOTEN_KH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DIACHI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DT" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="MA_PHIEU" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="PHIEU_DK" Relationship="Self.FK__KHACHHANG__MA_PH__398D8EEE" FromRole="KHACHHANG" ToRole="PHIEU_DK" />
+  </EntityType>
+  <EntityType Name="LO_TRINH">
+    <Key>
+      <PropertyRef Name="MA_NOIDI" />
+      <PropertyRef Name="MA_NOIDEN" />
+    </Key>
+    <Property Name="MA_NOIDI" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MA_NOIDEN" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="CT_DIEM_DUNG_CHAN" Relationship="Self.FK__CT_DIEM_DUNG_CHA__37A5467C" FromRole="LO_TRINH" ToRole="CT_DIEM_DUNG_CHAN" />
+    <NavigationProperty Name="LOTRINH_TOUR" Relationship="Self.FK__LOTRINH_TOUR__36B12243" FromRole="LO_TRINH" ToRole="LOTRINH_TOUR" />
+  </EntityType>
+  <EntityType Name="LOTRINH_TOUR">
+    <Key>
+      <PropertyRef Name="MA_TOUR" />
+    </Key>
+    <Property Name="MA_TOUR" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MA_NOIDI" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MA_NOIDEN" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SONGAY" Type="Int32" />
+    <Property Name="SONGAYDI_PT" Type="Int32" />
+    <Property Name="LOAI_PT" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="LOAI_KS" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="LO_TRINH" Relationship="Self.FK__LOTRINH_TOUR__36B12243" FromRole="LOTRINH_TOUR" ToRole="LO_TRINH" />
+    <NavigationProperty Name="TOUR" Relationship="Self.FK__LOTRINH_T__MA_TO__35BCFE0A" FromRole="LOTRINH_TOUR" ToRole="TOUR" />
+  </EntityType>
+  <EntityType Name="NHANVIEN">
+    <Key>
+      <PropertyRef Name="MANV" />
+    </Key>
+    <Property Name="MANV" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TEN_NV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NGAYSINH" Type="DateTime" Precision="3" />
+    <Property Name="PHAI" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="DT" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="PHIEU_DK" Relationship="Self.FK__PHIEU_DK__MANV__38996AB5" FromRole="NHANVIEN" ToRole="PHIEU_DK" />
+  </EntityType>
+  <EntityType Name="NV_HDDL">
+    <Key>
+      <PropertyRef Name="MANV_HDDL" />
+    </Key>
+    <Property Name="MANV_HDDL" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TEN_NV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NGAYSINH" Type="DateTime" Precision="3" />
+    <Property Name="PHAI" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="DIACHI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DT" Type="Int32" />
+    <NavigationProperty Name="HD_NV" Relationship="Self.FK__HD_NV__MANV_HDDL__31EC6D26" FromRole="NV_HDDL" ToRole="HD_NV" />
+  </EntityType>
+  <EntityType Name="PHIEU_DK">
+    <Key>
+      <PropertyRef Name="MA_PHIEU" />
+    </Key>
+    <Property Name="MA_PHIEU" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="NGAY_DK" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="MANV" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="CT_PHIEU_DK" Relationship="Self.FK__CT_PHIEU___MA_PH__3A81B327" FromRole="PHIEU_DK" ToRole="CT_PHIEU_DK" />
+    <NavigationProperty Name="KHACHHANGs" Relationship="Self.FK__KHACHHANG__MA_PH__398D8EEE" FromRole="PHIEU_DK" ToRole="KHACHHANG" />
+    <NavigationProperty Name="NHANVIEN" Relationship="Self.FK__PHIEU_DK__MANV__38996AB5" FromRole="PHIEU_DK" ToRole="NHANVIEN" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TOUR">
+    <Key>
+      <PropertyRef Name="MA_TOUR" />
+    </Key>
+    <Property Name="MA_TOUR" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TEN_TOUR" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SONGAY" Type="Int32" />
+    <Property Name="SODEM" Type="Int32" />
+    <NavigationProperty Name="CHITIET_THAMQUAN" Relationship="Self.FK__CHITIET_T__MA_TO__34C8D9D1" FromRole="TOUR" ToRole="CHITIET_THAMQUAN" />
+    <NavigationProperty Name="CHUYENs" Relationship="Self.FK__CHUYEN__MA_TOUR__32E0915F" FromRole="TOUR" ToRole="CHUYEN" />
+    <NavigationProperty Name="HOP_DONG" Relationship="Self.FK__HOP_DONG__MA_TOU__33D4B598" FromRole="TOUR" ToRole="HOP_DONG" />
+    <NavigationProperty Name="LOTRINH_TOUR" Relationship="Self.FK__LOTRINH_T__MA_TO__35BCFE0A" FromRole="TOUR" ToRole="LOTRINH_TOUR" />
+  </EntityType>
+  <Association Name="FK__CHITIET_T__MA_DT__2F10007B">
+    <End Role="DIEM_THAM_QUAN" Type="Self.DIEM_THAM_QUAN" Multiplicity="1" />
+    <End Role="CHITIET_THAMQUAN" Type="Self.CHITIET_THAMQUAN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DIEM_THAM_QUAN">
+        <PropertyRef Name="MA_DTQ" />
+      </Principal>
+      <Dependent Role="CHITIET_THAMQUAN">
+        <PropertyRef Name="MA_DTQ" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CHITIET_T__MA_TO__34C8D9D1">
+    <End Role="TOUR" Type="Self.TOUR" Multiplicity="1" />
+    <End Role="CHITIET_THAMQUAN" Type="Self.CHITIET_THAMQUAN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TOUR">
+        <PropertyRef Name="MA_TOUR" />
+      </Principal>
+      <Dependent Role="CHITIET_THAMQUAN">
+        <PropertyRef Name="MA_TOUR" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CHUYEN__MA_TOUR__32E0915F">
+    <End Role="TOUR" Type="Self.TOUR" Multiplicity="1" />
+    <End Role="CHUYEN" Type="Self.CHUYEN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TOUR">
+        <PropertyRef Name="MA_TOUR" />
+      </Principal>
+      <Dependent Role="CHUYEN">
+        <PropertyRef Name="MA_TOUR" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CT_PHIEU___MA_CH__2D27B809">
+    <End Role="CHUYEN" Type="Self.CHUYEN" Multiplicity="1" />
+    <End Role="CT_PHIEU_DK" Type="Self.CT_PHIEU_DK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CHUYEN">
+        <PropertyRef Name="MA_CHUYEN" />
+      </Principal>
+      <Dependent Role="CT_PHIEU_DK">
+        <PropertyRef Name="MA_CHUYEN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CT_DIEM_D__MA_DD__2E1BDC42">
+    <End Role="DIEM_DUNG_CHAN" Type="Self.DIEM_DUNG_CHAN" Multiplicity="1" />
+    <End Role="CT_DIEM_DUNG_CHAN" Type="Self.CT_DIEM_DUNG_CHAN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DIEM_DUNG_CHAN">
+        <PropertyRef Name="MA_DDC" />
+      </Principal>
+      <Dependent Role="CT_DIEM_DUNG_CHAN">
+        <PropertyRef Name="MA_DDC" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CT_DIEM_DUNG_CHA__37A5467C">
+    <End Role="LO_TRINH" Type="Self.LO_TRINH" Multiplicity="1" />
+    <End Role="CT_DIEM_DUNG_CHAN" Type="Self.CT_DIEM_DUNG_CHAN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LO_TRINH">
+        <PropertyRef Name="MA_NOIDI" />
+        <PropertyRef Name="MA_NOIDEN" />
+      </Principal>
+      <Dependent Role="CT_DIEM_DUNG_CHAN">
+        <PropertyRef Name="MA_NOIDI" />
+        <PropertyRef Name="MA_NOIDEN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CT_PHIEU___MA_PH__3A81B327">
+    <End Role="PHIEU_DK" Type="Self.PHIEU_DK" Multiplicity="1" />
+    <End Role="CT_PHIEU_DK" Type="Self.CT_PHIEU_DK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PHIEU_DK">
+        <PropertyRef Name="MA_PHIEU" />
+      </Principal>
+      <Dependent Role="CT_PHIEU_DK">
+        <PropertyRef Name="MA_PHIEU" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__HD_NV__MA_HD__300424B4">
+    <End Role="HOP_DONG" Type="Self.HOP_DONG" Multiplicity="1" />
+    <End Role="HD_NV" Type="Self.HD_NV" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HOP_DONG">
+        <PropertyRef Name="MA_HD" />
+      </Principal>
+      <Dependent Role="HD_NV">
+        <PropertyRef Name="MA_HD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__HD_NV__MANV_HDDL__31EC6D26">
+    <End Role="NV_HDDL" Type="Self.NV_HDDL" Multiplicity="1" />
+    <End Role="HD_NV" Type="Self.HD_NV" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NV_HDDL">
+        <PropertyRef Name="MANV_HDDL" />
+      </Principal>
+      <Dependent Role="HD_NV">
+        <PropertyRef Name="MANV_HDDL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__HOP_DONG__MA_DOA__30F848ED">
+    <End Role="KHACH_DOAN" Type="Self.KHACH_DOAN" Multiplicity="1" />
+    <End Role="HOP_DONG" Type="Self.HOP_DONG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHACH_DOAN">
+        <PropertyRef Name="MA_DOAN" />
+      </Principal>
+      <Dependent Role="HOP_DONG">
+        <PropertyRef Name="MA_DOAN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__HOP_DONG__MA_TOU__33D4B598">
+    <End Role="TOUR" Type="Self.TOUR" Multiplicity="1" />
+    <End Role="HOP_DONG" Type="Self.HOP_DONG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TOUR">
+        <PropertyRef Name="MA_TOUR" />
+      </Principal>
+      <Dependent Role="HOP_DONG">
+        <PropertyRef Name="MA_TOUR" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__KHACHHANG__MA_PH__398D8EEE">
+    <End Role="PHIEU_DK" Type="Self.PHIEU_DK" Multiplicity="1" />
+    <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PHIEU_DK">
+        <PropertyRef Name="MA_PHIEU" />
+      </Principal>
+      <Dependent Role="KHACHHANG">
+        <PropertyRef Name="MA_PHIEU" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__LOTRINH_TOUR__36B12243">
+    <End Role="LO_TRINH" Type="Self.LO_TRINH" Multiplicity="1" />
+    <End Role="LOTRINH_TOUR" Type="Self.LOTRINH_TOUR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LO_TRINH">
+        <PropertyRef Name="MA_NOIDI" />
+        <PropertyRef Name="MA_NOIDEN" />
+      </Principal>
+      <Dependent Role="LOTRINH_TOUR">
+        <PropertyRef Name="MA_NOIDI" />
+        <PropertyRef Name="MA_NOIDEN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__LOTRINH_T__MA_TO__35BCFE0A">
+    <End Role="TOUR" Type="Self.TOUR" Multiplicity="1" />
+    <End Role="LOTRINH_TOUR" Type="Self.LOTRINH_TOUR" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="TOUR">
+        <PropertyRef Name="MA_TOUR" />
+      </Principal>
+      <Dependent Role="LOTRINH_TOUR">
+        <PropertyRef Name="MA_TOUR" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PHIEU_DK__MANV__38996AB5">
+    <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="1" />
+    <End Role="PHIEU_DK" Type="Self.PHIEU_DK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHANVIEN">
+        <PropertyRef Name="MANV" />
+      </Principal>
+      <Dependent Role="PHIEU_DK">
+        <PropertyRef Name="MANV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="tourEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CHITIET_THAMQUAN" EntityType="Self.CHITIET_THAMQUAN" />
+    <EntitySet Name="CHUYENs" EntityType="Self.CHUYEN" />
+    <EntitySet Name="CT_DIEM_DUNG_CHAN" EntityType="Self.CT_DIEM_DUNG_CHAN" />
+    <EntitySet Name="CT_PHIEU_DK" EntityType="Self.CT_PHIEU_DK" />
+    <EntitySet Name="DIEM_DUNG_CHAN" EntityType="Self.DIEM_DUNG_CHAN" />
+    <EntitySet Name="DIEM_THAM_QUAN" EntityType="Self.DIEM_THAM_QUAN" />
+    <EntitySet Name="HD_NV" EntityType="Self.HD_NV" />
+    <EntitySet Name="HOP_DONG" EntityType="Self.HOP_DONG" />
+    <EntitySet Name="KHACH_DOAN" EntityType="Self.KHACH_DOAN" />
+    <EntitySet Name="KHACHHANGs" EntityType="Self.KHACHHANG" />
+    <EntitySet Name="LO_TRINH" EntityType="Self.LO_TRINH" />
+    <EntitySet Name="LOTRINH_TOUR" EntityType="Self.LOTRINH_TOUR" />
+    <EntitySet Name="NHANVIENs" EntityType="Self.NHANVIEN" />
+    <EntitySet Name="NV_HDDL" EntityType="Self.NV_HDDL" />
+    <EntitySet Name="PHIEU_DK" EntityType="Self.PHIEU_DK" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="TOURs" EntityType="Self.TOUR" />
+    <AssociationSet Name="FK__CHITIET_T__MA_DT__2F10007B" Association="Self.FK__CHITIET_T__MA_DT__2F10007B">
+      <End Role="DIEM_THAM_QUAN" EntitySet="DIEM_THAM_QUAN" />
+      <End Role="CHITIET_THAMQUAN" EntitySet="CHITIET_THAMQUAN" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CHITIET_T__MA_TO__34C8D9D1" Association="Self.FK__CHITIET_T__MA_TO__34C8D9D1">
+      <End Role="TOUR" EntitySet="TOURs" />
+      <End Role="CHITIET_THAMQUAN" EntitySet="CHITIET_THAMQUAN" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CHUYEN__MA_TOUR__32E0915F" Association="Self.FK__CHUYEN__MA_TOUR__32E0915F">
+      <End Role="TOUR" EntitySet="TOURs" />
+      <End Role="CHUYEN" EntitySet="CHUYENs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CT_PHIEU___MA_CH__2D27B809" Association="Self.FK__CT_PHIEU___MA_CH__2D27B809">
+      <End Role="CHUYEN" EntitySet="CHUYENs" />
+      <End Role="CT_PHIEU_DK" EntitySet="CT_PHIEU_DK" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CT_DIEM_D__MA_DD__2E1BDC42" Association="Self.FK__CT_DIEM_D__MA_DD__2E1BDC42">
+      <End Role="DIEM_DUNG_CHAN" EntitySet="DIEM_DUNG_CHAN" />
+      <End Role="CT_DIEM_DUNG_CHAN" EntitySet="CT_DIEM_DUNG_CHAN" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CT_DIEM_DUNG_CHA__37A5467C" Association="Self.FK__CT_DIEM_DUNG_CHA__37A5467C">
+      <End Role="LO_TRINH" EntitySet="LO_TRINH" />
+      <End Role="CT_DIEM_DUNG_CHAN" EntitySet="CT_DIEM_DUNG_CHAN" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CT_PHIEU___MA_PH__3A81B327" Association="Self.FK__CT_PHIEU___MA_PH__3A81B327">
+      <End Role="PHIEU_DK" EntitySet="PHIEU_DK" />
+      <End Role="CT_PHIEU_DK" EntitySet="CT_PHIEU_DK" />
+    </AssociationSet>
+    <AssociationSet Name="FK__HD_NV__MA_HD__300424B4" Association="Self.FK__HD_NV__MA_HD__300424B4">
+      <End Role="HOP_DONG" EntitySet="HOP_DONG" />
+      <End Role="HD_NV" EntitySet="HD_NV" />
+    </AssociationSet>
+    <AssociationSet Name="FK__HD_NV__MANV_HDDL__31EC6D26" Association="Self.FK__HD_NV__MANV_HDDL__31EC6D26">
+      <End Role="NV_HDDL" EntitySet="NV_HDDL" />
+      <End Role="HD_NV" EntitySet="HD_NV" />
+    </AssociationSet>
+    <AssociationSet Name="FK__HOP_DONG__MA_DOA__30F848ED" Association="Self.FK__HOP_DONG__MA_DOA__30F848ED">
+      <End Role="KHACH_DOAN" EntitySet="KHACH_DOAN" />
+      <End Role="HOP_DONG" EntitySet="HOP_DONG" />
+    </AssociationSet>
+    <AssociationSet Name="FK__HOP_DONG__MA_TOU__33D4B598" Association="Self.FK__HOP_DONG__MA_TOU__33D4B598">
+      <End Role="TOUR" EntitySet="TOURs" />
+      <End Role="HOP_DONG" EntitySet="HOP_DONG" />
+    </AssociationSet>
+    <AssociationSet Name="FK__KHACHHANG__MA_PH__398D8EEE" Association="Self.FK__KHACHHANG__MA_PH__398D8EEE">
+      <End Role="PHIEU_DK" EntitySet="PHIEU_DK" />
+      <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__LOTRINH_TOUR__36B12243" Association="Self.FK__LOTRINH_TOUR__36B12243">
+      <End Role="LO_TRINH" EntitySet="LO_TRINH" />
+      <End Role="LOTRINH_TOUR" EntitySet="LOTRINH_TOUR" />
+    </AssociationSet>
+    <AssociationSet Name="FK__LOTRINH_T__MA_TO__35BCFE0A" Association="Self.FK__LOTRINH_T__MA_TO__35BCFE0A">
+      <End Role="TOUR" EntitySet="TOURs" />
+      <End Role="LOTRINH_TOUR" EntitySet="LOTRINH_TOUR" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PHIEU_DK__MANV__38996AB5" Association="Self.FK__PHIEU_DK__MANV__38996AB5">
+      <End Role="NHANVIEN" EntitySet="NHANVIENs" />
+      <End Role="PHIEU_DK" EntitySet="PHIEU_DK" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

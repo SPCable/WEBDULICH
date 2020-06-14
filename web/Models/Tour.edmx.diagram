@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1818dc61d11f46af9b1bc81cf56e01cf" Name="Diagram1">
+        <EntityTypeShape EntityType="tourModel.CHITIET_THAMQUAN" Width="1.5" PointX="3" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="tourModel.CHUYEN" Width="1.5" PointX="3" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="tourModel.CT_DIEM_DUNG_CHAN" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tourModel.CT_PHIEU_DK" Width="1.5" PointX="5.25" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="tourModel.DIEM_DUNG_CHAN" Width="1.5" PointX="3.75" PointY="23" IsExpanded="true" />
+        <EntityTypeShape EntityType="tourModel.DIEM_THAM_QUAN" Width="1.5" PointX="0.75" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="tourModel.HD_NV" Width="1.5" PointX="8.25" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="tourModel.HOP_DONG" Width="1.5" PointX="6" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="tourModel.KHACH_DOAN" Width="1.5" PointX="3.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tourModel.KHACHHANG" Width="1.5" PointX="5.25" PointY="19.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="tourModel.LO_TRINH" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="tourModel.LOTRINH_TOUR" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="tourModel.NHANVIEN" Width="1.5" PointX="0.75" PointY="19.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="tourModel.NV_HDDL" Width="1.5" PointX="6" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="tourModel.PHIEU_DK" Width="1.5" PointX="3" PointY="19.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="tourModel.sysdiagram" Width="1.5" PointX="8.75" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="tourModel.TOUR" Width="1.5" PointX="0.75" PointY="8.5" IsExpanded="true" />
+        <AssociationConnector Association="tourModel.FK__CHITIET_T__MA_DT__2F10007B" ManuallyRouted="false" />
+        <AssociationConnector Association="tourModel.FK__CHITIET_T__MA_TO__34C8D9D1" ManuallyRouted="false" />
+        <AssociationConnector Association="tourModel.FK__CHUYEN__MA_TOUR__32E0915F" ManuallyRouted="false" />
+        <AssociationConnector Association="tourModel.FK__CT_PHIEU___MA_CH__2D27B809" ManuallyRouted="false" />
+        <AssociationConnector Association="tourModel.FK__CT_DIEM_D__MA_DD__2E1BDC42" ManuallyRouted="false" />
+        <AssociationConnector Association="tourModel.FK__CT_DIEM_DUNG_CHA__37A5467C" ManuallyRouted="false" />
+        <AssociationConnector Association="tourModel.FK__CT_PHIEU___MA_PH__3A81B327" ManuallyRouted="false" />
+        <AssociationConnector Association="tourModel.FK__HD_NV__MA_HD__300424B4" ManuallyRouted="false" />
+        <AssociationConnector Association="tourModel.FK__HD_NV__MANV_HDDL__31EC6D26" ManuallyRouted="false" />
+        <AssociationConnector Association="tourModel.FK__HOP_DONG__MA_DOA__30F848ED" ManuallyRouted="false" />
+        <AssociationConnector Association="tourModel.FK__HOP_DONG__MA_TOU__33D4B598" ManuallyRouted="false" />
+        <AssociationConnector Association="tourModel.FK__KHACHHANG__MA_PH__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="tourModel.FK__LOTRINH_TOUR__36B12243" ManuallyRouted="false" />
+        <AssociationConnector Association="tourModel.FK__LOTRINH_T__MA_TO__35BCFE0A" ManuallyRouted="false" />
+        <AssociationConnector Association="tourModel.FK__PHIEU_DK__MANV__38996AB5" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
