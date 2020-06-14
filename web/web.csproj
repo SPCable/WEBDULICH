@@ -575,7 +575,6 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\NguoiDung\DangKi.cshtml" />
-    <Content Include="Views\Home\Hienthi.cshtml" />
     <Content Include="Views\TOURs\Create.cshtml" />
     <Content Include="Views\TOURs\Delete.cshtml" />
     <Content Include="Views\TOURs\Details.cshtml" />
@@ -583,7 +582,9 @@
     <Content Include="Views\TOURs\Index.cshtml" />
     <Content Include="Views\Home\travel_NhaTrang.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Views\Admin\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

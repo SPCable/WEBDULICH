@@ -4,9 +4,9 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="e1560721597a4e809168ba07a7df6ee5" Name="Diagram1">
+      <Diagram DiagramId="42904778c0a9482882f0a5ac2f8e9d5e" Name="Diagram1">
         <EntityTypeShape EntityType="tourModel.CHITIET_THAMQUAN" Width="1.5" PointX="3" PointY="7.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="tourModel.CHUYEN" Width="1.5" PointX="3" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="tourModel.CHUYEN" Width="1.5" PointX="3" PointY="11.25" IsExpanded="true" />
         <EntityTypeShape EntityType="tourModel.CT_DIEM_DUNG_CHAN" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="tourModel.CT_PHIEU_DK" Width="1.5" PointX="5.25" PointY="11.625" IsExpanded="true" />
         <EntityTypeShape EntityType="tourModel.DIEM_DUNG_CHAN" Width="1.5" PointX="3.75" PointY="23" IsExpanded="true" />
@@ -20,8 +20,8 @@
         <EntityTypeShape EntityType="tourModel.NHANVIEN" Width="1.5" PointX="0.75" PointY="19.5" IsExpanded="true" />
         <EntityTypeShape EntityType="tourModel.NV_HDDL" Width="1.5" PointX="6" PointY="3.625" IsExpanded="true" />
         <EntityTypeShape EntityType="tourModel.PHIEU_DK" Width="1.5" PointX="3" PointY="19.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="tourModel.sysdiagram" Width="1.5" PointX="8.75" PointY="3.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="tourModel.TOUR" Width="1.5" PointX="0.75" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="tourModel.sysdiagram" Width="1.5" PointX="8.75" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="tourModel.TOUR" Width="1.5" PointX="0.75" PointY="8.25" IsExpanded="true" />
         <AssociationConnector Association="tourModel.FK__CHITIET_T__MA_DT__2F10007B" ManuallyRouted="false" />
         <AssociationConnector Association="tourModel.FK__CHITIET_T__MA_TO__34C8D9D1" ManuallyRouted="false" />
         <AssociationConnector Association="tourModel.FK__CHUYEN__MA_TOUR__32E0915F" ManuallyRouted="false" />
