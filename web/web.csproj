@@ -242,6 +242,12 @@
     <Compile Include="Models\PHIEU_DK.cs">
       <DependentUpon>Tour.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>Tour.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_helpdiagrams_Result.cs">
+      <DependentUpon>Tour.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\sysdiagram.cs">
       <DependentUpon>Tour.tt</DependentUpon>
     </Compile>
