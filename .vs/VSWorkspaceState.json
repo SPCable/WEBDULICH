@@ -1,6 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\web",
+    "\\web\\Content",
+    "\\web\\Controllers"
   ],
+  "SelectedNode": "\\web.sln",
   "PreviewInSolutionExplorer": false
 }
